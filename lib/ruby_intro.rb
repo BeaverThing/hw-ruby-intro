@@ -7,7 +7,7 @@ def sum arr
   if(arr.empty?)
     x = 0
   else
-    arr.each{ |a| x = x + a}
+    arr.each{ |a| x = x + a}  
   end
   x
 end
@@ -31,16 +31,16 @@ def sum_to_n? arr, n
   else
     iterate = 0
     arr.each do |i|
-      temp = arr[(iterate+1)..arr.count-1]
+      temp = arr[(iterate+1)..arr.count-1]  #Subset of arr from the ith position
       temp.each do |j|
-        if(j+i == n)
+        if(j+i == n)  #Double for loop for sum
           res = true
         end
       end
       iterate = iterate + 1
     end
   end
-  res
+  res   # Iterate was our last value, return res
 end
 
 # Part 2
@@ -54,13 +54,13 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  if(s == '' || s =~ /[^10]+/)
+  if(s == '' || s =~ /[^10]+/) # False for all empty and non-binary strings
     res = false
   elsif(s == '0')
     res = true
-  elsif(s =~ /(10)$/ || s =~ /(01)$/)
+  elsif(s =~ /(10)$/ || s =~ /(01)$/) # False for all strings with either the 1 or 2 bit set
     res = false
-  else
+  else       # Otherwise true
     res = true
   end
 end
